@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+<form action="/submit-form">
+<fieldset>
+<legend>User Information:</legend>
+<label for="name">Name</label>
+<div style="display:flex;">
+<select id="title" name="title">
+<option value="Mr" selected>Mr</option>
+<option value="Ms">Ms</option>
+<option value="Mrs">Mrs</option>
+</select>
+<input type="text" id="name" name="name" />
+</div>
+<div class="form-group">
+<label for="phone">Phone</label>
+<input type="tel" id="phone" name="phone" />
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" />
+</div>
+</fieldset>
+<div class="form-group">
+<label for="address">Address</label>
+<textarea id="address" name="address"></textarea>
+</div>
+<div class="form-group">
+<label>Gender</label>
+<input type="radio" id="male" name="gender" value="male" />
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female" />
+<label for="female">Female</label>
+<input type="radio" id="other" name="gender" value="other" />
+<label for="other">Other</label>
+</div>
+<div class="form-group">
+<label>Languages known</label>
+<input type="checkbox" id="english" name="language" value="english" />
+<label for="english">English</label>
+<input type="checkbox" id="malayalam" name="language" value="malayalam" />
+<label for="malayalam">Malayalam</label>
+<input type="checkbox" id="hindi" name="language" value="hindi" />
+<label for="hindi">Hindi</label>
+</div>
+<div class="form-group">
+<label for="course">Course</label>
+<select id="course" name="course">
+</select>
+</div>
+<div class="button-group">
+<center>
+<button type="reset">Reset</button>
+<button type="submit">Submit</button>
+</center>
+</div>
+</form>
+</div>
+</body>
+</html>
