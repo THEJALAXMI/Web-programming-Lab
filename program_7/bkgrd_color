@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Event handling</title>
+</head>
+<body>
+	<label>To change background color</label>
+	<center>
+	<button onclick="background()">Click me</button>
+	</center>
+	<script>
+		function background()
+		{
+			var r=Math.floor(Math.random()*256);
+			var g=Math.floor(Math.random()*256);
+			var b=Math.floor(Math.random()*256);
+			document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+		}
+</script>
+</body>
+</html> 
