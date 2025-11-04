@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Registration Form</title>
+<script>
+function validateForm() {
+var username = document.getElementById("username").value;
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+var confirmPassword = document.getElementById("confirmPassword").value;
+var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if (username == "") 
+{
+alert("Please enter your username");
+return false;
+}
+
+if (email == "") 
+{
+alert("Please enter your email");
+return false;
+}
+
+if (!email.match(emailPattern)) 
+{
+alert("Please enter a valid email address");
+return false;
+}
+
+if (password == "") 
+{
+alert("Please enter your password");
+return false;
+}
+
+if(password.length < 6)
+{
+alert("Password must be at least 6 characters long");
+return false;
+}
+
+if (confirmPassword == "") 
+{
+alert("Please confirm your password");
+return false;
+}
+
+if (password != confirmPassword) 
+{
+alert("Passwords do not match");
+return false;
+}
+
+alert("Registration successful!");
+return true;
+}
+</script>
+</head>
+
+<body>
+<h2>Registration Form</h2>
+<form onsubmit="return validateForm()">
+<label>Username:</label><br>
+<input type="text" id="username"><br><br>
+
+<label>Email:</label><br>
+<input type="text" id="email"><br><br>
+
+<label>Password:</label><br>
+<input type="password" id="password"><br><br>
+
+<label>Confirm Password:</label><br>
+<input type="password" id="confirmPassword"><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
+

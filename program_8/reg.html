@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+   body {
+        font-family: Arial,sans-serif;
+        background-color:pink;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        margin:0;
+    }
+
+    form {
+        background-color:#fff;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:00 10px rgba(0,0,0,0.1);
+        width:320px;
+        text-align:left;
+    }
+
+    h2 {
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    label {
+        font-weight:bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"] {
+        width:100%;
+        padding:8px;
+        margin-top:5px;
+        margin-bottom:15px;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+
+    input[type="submit"]
+     {
+        width:100%;
+        background-color:#007BFF;
+        color:white;
+        padding:10px;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+        font-size:16px;
+    }
+ 
+</style>
+
+<script>
+function validateForm() {
+    var username = document.getElementById("username").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    var phonePattern = /^[0-9]{10}$/;
+    var strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^+=._-])[A-Za-z\d@$!%*?&#^+=._-]{8,}$/;
+
+    if (username === "") {
+        alert("Please enter your username");
+        return false;
+    }
+
+    if (email === "") {
+        alert("Please enter your email");
+        return false;
+    }
+
+    if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    if (phone === "") {
+        alert("Please enter your phone number");
+        return false;
+    }
+
+    if (!phone.match(phonePattern)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+    }
+
+    if (password === "") {
+        alert("Please enter your password");
+        return false;
+    }
+
+    if (!password.match(strongPasswordPattern)) {
+        alert("Password must be at least 8 characters long, and include uppercase, lowercase, number, and special character");
+        return false;
+    }
+
+    if (confirmPassword === "") {
+        alert("Please confirm your password");
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    alert("Registration successful!");
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+    <form onsubmit="return validateForm()">
+        <h2>Registration Form</h2>
+
+        <label>Username:</label><br>
+        <input type="text" id="username"><br>
+
+        <label>Email:</label><br>
+        <input type="text" id="email"><br>
+
+        <label>Phone Number:</label><br>
+        <input type="tel" id="phone" placeholder="Enter 10-digit number"><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br>
+
+        <label>Confirm Password:</label><br>
+        <input type="password" id="confirmPassword"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
